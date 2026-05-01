@@ -1,6 +1,6 @@
-# pa-pack
+# Personal Assistant Pack
 
-A curated, opinionated stack of tools and workflows for building effective personal assistant agents. Rather than prescribing a single monolithic persona, pa-pack provides modular components that practitioners can mix, match, and extend.
+A curated, opinionated stack of tools and workflows for building effective personal assistant agents. Rather than prescribing a single monolithic persona, Personal Assistant Pack provides modular components that practitioners can mix, match, and extend.
 
 ## What It Is
 
@@ -37,7 +37,7 @@ cp -r pa-pack ~/.openclaw/skills/
 ### ClawHub
 
 ```bash
-openclaw skill install pa-pack
+clawhub install pa-pack
 ```
 
 ## Quick Start
