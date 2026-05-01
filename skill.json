@@ -1,6 +1,6 @@
 {
   "name": "Personal Assistant Pack",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Personal Assistant Pack — Knowledge pack with curated tool installation instructions for Google Workspace. Teaches agents which tools exist and how to install them. Not automation.",
   "author": "CertainLogic",
   "license": "MIT",
@@ -10,81 +10,9 @@
     "optional": ["google-calendar-api", "outlook-api", "gmail-api", "imap-access"]
   },
   "entry": {
-    "cli": "scripts/pa-cli.py",
-    "prompts": "scripts/prompts/"
+    "prompts": "scripts/prompts/",
+    "note": "CLI commands exist as see README — see README for details"
   },
-  "commands": [
-    {
-      "name": "list",
-      "description": "List available components and their status"
-    },
-    {
-      "name": "triage",
-      "description": "Score messages by priority and suggest actions",
-      "args": [
-        {
-          "name": "input",
-          "type": "string",
-          "required": true,
-          "description": "Path to JSON file with messages"
-        }
-      ]
-    },
-    {
-      "name": "draft",
-      "description": "Generate a reply draft for a conversation thread",
-      "args": [
-        {
-          "name": "thread",
-          "type": "string",
-          "required": true,
-          "description": "Thread identifier or file path"
-        },
-        {
-          "name": "tone",
-          "type": "string",
-          "default": "concise",
-          "description": "Tone variant: concise, detailed, apologetic, assertive"
-        }
-      ]
-    },
-    {
-      "name": "schedule",
-      "description": "Check calendar conflicts and suggest slots",
-      "args": [
-        {
-          "name": "proposed",
-          "type": "string",
-          "required": true,
-          "description": "Proposed meeting time (ISO 8601)"
-        },
-        {
-          "name": "duration",
-          "type": "string",
-          "default": "60m",
-          "description": "Meeting duration"
-        }
-      ]
-    },
-    {
-      "name": "followup",
-      "description": "Set a tracked follow-up with deadline",
-      "args": [
-        {
-          "name": "deadline",
-          "type": "string",
-          "required": true,
-          "description": "Follow-up deadline (YYYY-MM-DD)"
-        },
-        {
-          "name": "topic",
-          "type": "string",
-          "required": true,
-          "description": "Short description of the follow-up topic"
-        }
-      ]
-    }
-  ],
   "repository": "https://github.com/certainlogic/pa-pack",
   "homepage": "https://github.com/certainlogic/pa-pack#readme",
   "bugs": "https://github.com/certainlogic/pa-pack/issues"

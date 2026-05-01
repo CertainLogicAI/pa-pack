@@ -1,63 +1,74 @@
 # Personal Assistant Pack
 
-A curated, opinionated stack of tools and workflows for building effective personal assistant agents. Rather than prescribing a single monolithic persona, Personal Assistant Pack provides modular components that practitioners can mix, match, and extend.
+A **Curated toolkit guide** for personal assistants supporting Google Workspace business owners. This is documentation, not working software.
 
 ## What It Is
 
-- A **reference architecture** for personal assistant setups
-- A **collection of tested prompt patterns** for common PA tasks
-- A **workflow library** (scheduling, triage, drafting, follow-up)
+- A **written guide** (PA_GUIDE.md) for the daily PA workflow
+- **Installation instructions** for 5 real tools that make up the stack
 - A **skills compatibility matrix** showing which tools work well together
 
-## What It Is NOT
+## What Is NOT Included
 
-- Not a one-size-fits-all solution — you will need to adapt it
-- Not a replacement for domain-specific skills (finance, legal, medical)
-- Not a guarantee that your PA will never make mistakes
-- Not an autonomous system; it is a set of building blocks
+- ❌ Automated email triage (no code — just describes how to use gog for Gmail)
+- ❌ Drafting engine (no code — just describes prompt patterns)
+- ❌ Calendar integration (no code — just describes how to use gog for Calendar)
+- ❌ Follow-up tracking (no code — just describes Things 3 projects)
 
-## Components
+## What's in the Stack
 
-| Component | Purpose | Status |
-|-----------|---------|--------|
-| `triager` | Inbox/message triage with priority scoring | Reference |
-| `drafter` | Context-aware email/message drafting | Reference |
-| `scheduler` | Calendar conflict detection and suggestions | Reference |
-| `followup` | Reminder and deadline tracking | Reference |
-| `context-kernel` | Session context management pattern | Documented |
+| Tool | Creator | What It Does | Prerequisites |
+|------|---------|--------------|--------------|
+| gog | steipete | Google Workspace CLI (email, calendar, drive) | Google account |
+| things-mac | ossianhempel | macOS task manager | macOS + Things 3 app ($50) |
+| notion | Notion Labs | Notes, databases, project tracking | Notion account + API key |
+| healthcheck | OpenClaw | System security baseline | None |
+| vetter | CertainLogic | Skill safety scanner | None |
 
 ## Installation
 
-### OpenClaw
+Install each tool individually:
 
 ```bash
-cp -r pa-pack ~/.openclaw/skills/
+# 1. gog — Google Workspace
+clawhub install gog
+# (OAuth setup required)
+
+# 2. things-mac — Task manager
+clawhub install things-mac
+# (Requires Things 3 app on macOS)
+
+# 3. notion — Knowledge base
+clawhub install notion
+# (Requires Notion API key)
+
+# 4. healthcheck — Security baseline
+clawhub install healthcheck
+
+# 5. vetter — Safety scanner
+clawhub install skill-vetter-plus
 ```
 
-### ClawHub
+Then follow PA_GUIDE.md for the daily workflow.
 
-```bash
-clawhub install pa-pack
-```
+## Honest Limitations
 
-## Quick Start
+- **Reference documentation only** — no automation code
+- **macOS + Google Workspace** — no Outlook/Exchange support
+- **Manual setup** — each tool installed separately
+- **Things 3 costs $50** — not included
 
-1. Read `PA_GUIDE.md` for the full architecture
-2. Pick a component (start with `triager`)
-3. Customize the prompts in `scripts/prompts/`
-4. Test with your real tasks
-5. Iterate
+## Free vs Pro
 
-## Requirements
+**Free:** Documentation and installation guides
+**Pro ($49):** Not yet available. Would include working automation.
 
-- Text editor (no special tools required)
-- Optional: calendar API access for scheduler demos
-- Optional: email access for triager/drafter demos
+## Links
 
-## License
+- GitHub: https://github.com/certainlogic/pa-pack
+- ClawHub: https://clawhub.ai/certainlogicai/pa-pack
+- Docs: https://certainlogic.ai/docs/pa-pack
 
-MIT — see [LICENSE](LICENSE)
+---
 
-## Attribution
-
-See [ATTRIBUTION.md](ATTRIBUTION.md) for third-party prompt research and tooling credits.
+*Built with brutal honesty by [CertainLogic](https://certainlogic.ai)*
