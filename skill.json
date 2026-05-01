@@ -1,6 +1,6 @@
 {
   "name": "Personal Assistant Pack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A curated stack of tools and workflows for building effective personal assistant agents. Modular components for triage, drafting, scheduling, and follow-up.",
   "author": "CertainLogic",
   "license": "MIT",
