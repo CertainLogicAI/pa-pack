@@ -1,7 +1,7 @@
 {
   "name": "Personal Assistant Pack",
-  "version": "1.0.1",
-  "description": "A curated stack of tools and workflows for building effective personal assistant agents. Modular components for triage, drafting, scheduling, and follow-up.",
+  "version": "1.0.2",
+  "description": "Personal Assistant Pack — Knowledge pack with curated tool installation instructions for Google Workspace. Teaches agents which tools exist and how to install them. Not automation.",
   "author": "CertainLogic",
   "license": "MIT",
   "category": "productivity",

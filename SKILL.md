@@ -1,104 +1,77 @@
-# SKILL.md — pa-pack
+---
+name: pa-pack
+description: "Personal Assistant Pack — Curated toolkit for Google Workspace business owners. Includes installation guides for 5 real tools (gog, things-mac, notion, healthcheck, vetter). Does NOT include automated workflows — it teaches your agent which tools exist and how to install them."
+homepage: https://certainlogic.ai/docs/pa-pack
+metadata:
+  {
+    "openclaw":
+      {
+        "emoji": "📋",
+        "tags": ["productivity", "pa", "assistant", "google-workspace", "curation"],
+      },
+  }
+---
 
-## Name
-pa-pack
+# Personal Assistant Pack
 
-## Description
-A curated, opinionated stack of tools and workflows for building effective personal assistant agents. Provides modular components for triage, drafting, scheduling, and follow-up that practitioners can adapt to their own contexts.
+## Overview
 
-## Version
-1.0.0
+A curated toolkit for personal assistants supporting Google Workspace business owners. This is a **knowledge pack** — it teaches your agent which tools exist and how to set them up. It does NOT contain working automation.
 
-## Author
-CertainLogic
+## What Actually Exists
 
-## License
-MIT
+| Component | What It Is | Status |
+|-----------|-----------|--------|
+| PA_GUIDE.md | Written documentation of recommended daily workflow | ✅ Real |
+| README.md | Installation instructions for each tool | ✅ Real |
+| scripts/pa-cli.py | Stub — lists components but each command prints "not implemented" | ⚠️ Not functional |
 
-## Category
-productivity, assistant, workflow
+## What the Agent Can Do
 
-## Tags
-personal-assistant, productivity, triage, drafting, scheduling, workflow, agent-stack
+With this pack installed, your agent knows:
+- Which 5 tools form the daily workflow (gog, things-mac, notion, healthcheck, vetter)
+- What each tool does (Gmail triage, task management, knowledge base, security)
+- How to install each tool and what prerequisites are needed
+- Who built each tool (attribution)
 
-## Requirements
-- No hard dependencies
-- Optional: calendar API (Google Calendar, Outlook)
-- Optional: email API (Gmail, IMAP)
+## What the Agent CANNOT Do
 
-## Installation
-Place the `pa-pack/` folder into your OpenClaw skills directory and restart.
+| Claimed Feature | Reality |
+|-----------------|---------|
+| Automated email triage | NO — agent knows the tools exist but cannot run them |
+| Context-aware drafting | NO — pa-cli.py is a stub, no real drafting code |
+| Calendar conflict detection | NO — no calendar integration code |
+| Deadline tracking | NO — no follow-up automation |
 
-## Usage
+## Prerequisites
 
-### Browse Components
+- macOS (for Things 3)
+- Things 3 app (paid, ~$50)
+- Google Workspace account
+- Notion account + API key
 
-```bash
-openclaw skill pa-pack list
-```
+## Honest Limitations
 
-### Use a Component
+- **Knowledge only** — teaches tools, does not implement workflows
+- **macOS + Google Workspace** — no Outlook/Exchange support
+- **Manual setup** — each tool must be installed and configured separately
+- **Things 3 is paid** — $50 for the task manager
 
-```bash
-# Generate a priority score for messages
-openclaw skill pa-pack triage --input messages.json
+## Free vs Pro
 
-# Draft a reply given context
-openclaw skill pa-pack draft --thread thread_123 --tone concise
+**Free:** Knowledge pack with installation instructions and workflow guide
+**Pro ($49):** Not yet available. Would include working automations, custom workflows, priority support
 
-# Check calendar conflicts
-openclaw skill pa-pack schedule --proposed "2026-06-15T10:00:00Z" --duration 60m
+## Attribution
 
-# Set follow-up tracking
-openclaw skill pa-pack followup --deadline "2026-06-20" --topic "Contract review"
-```
+This pack curates tools by **steipete** (gog), **ossianhempel** (things-mac), **Notion Labs** (notion), **OpenClaw** (healthcheck), and **CertainLogic** (vetter).
 
-### Customize Prompts
+## Links
 
-Each component loads prompts from `scripts/prompts/<component>.md`. You can override these by placing a file of the same name in `~/.openclaw/skills/pa-pack/custom-prompts/`.
+- GitHub: https://github.com/certainlogic/pa-pack
+- ClawHub: https://clawhub.ai/certainlogicai/pa-pack
+- Docs: https://certainlogic.ai/docs/pa-pack
 
-## Architecture
+---
 
-The pack follows these principles:
-
-1. **Modularity:** Each component is self-contained. Use one, two, or all.
-2. **Context-awareness:** Components expect a context object (previous messages, user preferences, time zone).
-3. **Human-in-the-loop:** Outputs are suggestions, not autonomous actions. The human approves before sending.
-4. **Transparency:** Every suggestion includes reasoning so the human can evaluate it.
-
-## Component Details
-
-### Triager
-- Scores incoming messages by urgency and relevance
-- Suggests action: reply now, reply later, delegate, ignore
-- Requires: message subject + body + sender context
-
-### Drafter
-- Generates reply drafts given thread context and desired tone
-- Supports: concise, detailed, apologetic, assertive
-- Requires: thread history + intent summary
-
-### Scheduler
-- Detects conflicts with existing calendar events
-- Suggests alternative slots
-- Requires: proposed time + duration + attendee list
-
-### Follow-Up
-- Tracks deadlines and sends reminders
-- Escalates overdue items
-- Requires: deadline + topic + owner
-
-## Limitations
-
-- Does not have real-time calendar access unless you integrate an API
-- Draft quality depends on the amount of context provided
-- Triage scoring is heuristic-based, not learned from your behavior
-- No persistent memory across sessions without external storage
-
-## Changelog
-
-### 1.0.0
-- Initial release
-- Triager, Drafter, Scheduler, Follow-Up components
-- Prompt library with 4 tone variants
-- Context-kernel pattern documentation
+*Built with brutal honesty by [CertainLogic](https://certainlogic.ai)*
